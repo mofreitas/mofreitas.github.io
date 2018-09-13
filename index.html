@@ -430,6 +430,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .listingblock .pygments .hll { background-color: #ffffcc }
 .listingblock .pygments, .listingblock .pygments code { background: #f8f8f8; }
@@ -549,7 +550,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_introdução">Introdução</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Este site se destina a apresentação da solução dos exercícios propostos na disciplina de Processamento Digital de Imagens (DCA0445) disponibilizado pelo Departamento de Computação de Automação da UFRN e ministrado pelo professor Agostinho Brito, cujo curso se encontra disponível em <a href="https://agostinhobritojr.github.io/tutorial/pdi/" class="bare">https://agostinhobritojr.github.io/tutorial/pdi/</a>.</p>
+<p>Este site se destina a apresentação da solução dos exercícios propostos na disciplina de Processamento Digital de Imagens (DCA0445) disponibilizado pelo Departamento de Engenharia de Computação e Automação da UFRN e ministrado pelo professor Agostinho Brito, cujo curso se encontra disponível em <a href="https://agostinhobritojr.github.io/tutorial/pdi/" class="bare">https://agostinhobritojr.github.io/tutorial/pdi/</a>.</p>
 </div>
 <div class="paragraph">
 <p>Todos os exercícios a seguir foram desenvolvidos em C++, juntamente com a biblioteca OpenCV <a href="https://opencv.org/" class="bare">https://opencv.org/</a>, compilados usando o <em>Makefile</em> disponibilizado no site do curso. Para compilar e executar os códigos precisamos usar os seguintes comandos:</p>
@@ -566,7 +567,7 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
 <h2 id="_manipulando_pixels_em_uma_imagem">1. Manipulando pixels em uma imagem</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Neste tópico vemos como podemos abrir, acessar e modificar seus pixels, e exibir uma imagem usando as ferramentas acima.</p>
+<p>Neste tópico vemos como abrir e exibir uma imagem, além de acessar e modificar seus pixels, usando as ferramentas acima.</p>
 </div>
 <div class="sect2">
 <h3 id="_exercício_regiões">1.1. Exercício <strong><em>Regiões</em></strong></h3>
@@ -713,7 +714,7 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
 <h2 id="_preenchendo_regiões">2. Preenchendo regiões</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Nessa seção aprendemos sobre o algorítimo <em>floodfill</em>, usado para preencher regiões, e o aplicamos em programa que contabiliza as bolhas e as bolas brancas em uma imagem de fundo preto.</p>
+<p>Nessa seção aprendemos sobre o algorítimo <em>floodfill</em>, usado para preencher regiões, e o aplicamos em um programa que contabiliza as bolhas e as bolas brancas em uma imagem de fundo preto.</p>
 </div>
 <div class="sect2">
 <h3 id="_exercício_labeling_1º_parte">2.1. Exercício <strong><em>labeling</em></strong> (1º Parte)</h3>
@@ -724,7 +725,7 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
 <div class="sect2">
 <h3 id="_exercício_labeling_2º_parte">2.2. Exercício <strong><em>labeling</em></strong> (2º Parte)</h3>
 <div class="paragraph">
-<p>A partir do labeling.cpp, o algorítimo de contagem foi aprimorado, levando em consideração obejtos com mais de um buraco e excluindo as bolhas que tocam a borda da contagem. Abaixo podemos ver o código e o resultado de sua execução:</p>
+<p>A partir do labeling.cpp, o algorítimo de contagem foi aprimorado, levando em consideração objetos com mais de um buraco e excluindo as bolhas que tocam a borda da contagem. Abaixo podemos ver o código e o resultado de sua execução:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -908,7 +909,7 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
 <div class="sect2">
 <h3 id="_exercício_equalize">3.1. Exercício <strong><em>Equalize</em></strong></h3>
 <div class="paragraph">
-<p>Utilizando o programa exemplos/histogram.cpp como referência, implementamos um código que realiza a equalização dos quadros (convertidos para tons de cinza) que compõem o vídeo. Abaixo, temos o código e também visualizar os efeitos da equalização em um ambiente escuro.</p>
+<p>Utilizando o programa exemplos/histogram.cpp como referência, implementamos um código que realiza a equalização dos quadros (convertidos para tons de cinza) que compõem o vídeo. Abaixo, temos o código e em seguida a comparação entre uma imagem sem tratamento e a equalizada.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1009,7 +1010,7 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
 <div class="title">Figure 4. Comparação entre a saída inalterada e a equalizada</div>
 </div>
 <div class="paragraph">
-<p>Apesar da equalização evidenciar os detalhes escondidos na imagem original, quando uma cena tem um histograma estreito, a imagem fica distorcida por causa do efeito do falso contorno, uma vez que os os tons se distanciam depois desse tratamento.</p>
+<p>Apesar da equalização evidenciar os detalhes escondidos na imagem original, a imagem ficou distorcida por causa do efeito do falso contorno, uma vez que ao passar pelo processo de equalização, os tons dos pixels se distanciaram.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1137,7 +1138,7 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
 <div class="sect2">
 <h3 id="_exercício_laplgauss">4.1. Exercício <strong><em>laplgauss</em></strong></h3>
 <div class="paragraph">
-<p>Usando o programa exemplos/filtroespacial.cpp como base, adicionamos a opção de aplicar o filtro do laplaciano após aplicar o filtro do gaussiano na imagem apertando a letra <code>f</code>. Para isso, definimos <code>mask</code> como o gaussiano e atribuimos o valor verdadeiro a variável <code>lapgauss</code>. Quando o programa aplica o filtro, ele verifica se <code>lapgauss</code> é verdadeiro porém ao aplicar o filtro, aplicando o filtro gaussiano e em seguida o laplaciano caso verdadeiro. Para desativar esse filtro, quando outro modo é selecionado, a variável <code>lapgauss</code> assume o valor falso e , consequentemente, os filtros são aplicados normalmente.</p>
+<p>Usando o programa exemplos/filtroespacial.cpp como base, adicionamos a opção de aplicar o filtro do laplaciano após aplicar o gaussiano na imagem pressionando a letra <code>f</code>. Para isso, definimos <code>mask</code> como o gaussiano e atribuimos o valor verdadeiro a variável <code>lapgauss</code>. Quando o programa vai aplicar o filtro selecionado, se <code>lapgauss</code> for verdadeiro, o filtro laplaciano é aplicado logo após o gaussiano. Quando outro modo é selecionado, a variável <code>lapgauss</code> assume o valor falso e, consequentemente, apenas o filtro selecionado é aplicado.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1315,7 +1316,7 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
 <div class="title">Figure 6. Comparação entre o laplaciano de uma imagem (acima) e o laplaciano do gaussiano (abaixo)</div>
 </div>
 <div class="paragraph">
-<p>Podemos ver que na imagem abaixo as bordas estão menos evidentes. Isso acontece porque ao aplicar o filtro gaussiano, borramos a imagem deixando as bordas mais suaves. Isso afeta o efeito do filtro lapaciano, que apenas evidencia mudanças bruscas de tonalidade (bordas).</p>
+<p>Podemos ver que na imagem abaixo as bordas estão menos evidentes. Isso acontece porque ao aplicar o filtro gaussiano, borramos a imagem deixando as bordas mais suaves. Isso afeta o efeito do filtro lapaciano, que evidencia essas mudanças bruscas de tonalidade (bordas).</p>
 </div>
 </div>
 </div>
@@ -1324,18 +1325,33 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
 <h2 id="_filtragem_no_domínio_espacial_ii">5. Filtragem no domínio espacial II</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Nesta seção aprendemos sobre a execução do efeito <em>tilt-shift</em> usando técnicas de processamento digital de imagens. Também forma apresentados funções para a soma e multiplicação de matrizes.</p>
+<p>Nesta seção aprendemos sobre a execução do efeito <em>tilt-shift</em> usando técnicas de processamento digital de imagens. Também foam apresentados funções para a soma e multiplicação de matrizes.</p>
 </div>
 <div class="sect2">
 <h3 id="_exercicio_tiltshift">5.1. Exercicio <strong><em>tiltshift</em></strong></h3>
 <div class="paragraph">
-<p>Utilizando o programa exemplos/addweighted.cpp como referência, implementamos um programa para a realização do <em>tilt-shift</em> em uma imagem colorida cujo centro, região de decaimento e posição vertical do efeito podem ser alterados por meio de sliders. Para a realização desse efeito, foram criadas duas matrizes de ponderação usando a seguinte fórmula:</p>
+<p>Utilizando o programa exemplos/addweighted.cpp como referência, implementamos um programa para a realização do <em>tilt-shift</em> em uma imagem colorida cujo centro, região de decaimento e posição vertical do efeito podem ser alterados por meio de <em>sliders</em>. Para a realização desse efeito, foram criadas duas matrizes cujos valores do eixo x foram dados pela seguinte equação:</p>
 </div>
 <div class="paragraph">
-<p>\$f(x) = -0.5 * (tanh((x - centro + l1) / 0.01) - tanh((x - centro + l2) / 0.01)\$</p>
+<p>\$f(x) = -0.5 * (tanh((x - centro + l1) / d) - tanh((x - centro + l2) / d)\$</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Declarar pelo menos uma das váriáveis usadas dentro do \$tanh()\$ como <code>float</code> para que o argumento não seja arredondado.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>A matriz resultante desse cálculo foi usada para ponderar a imagem normal e a inversa dela \$1-f(x)\$ para ponderar a imagem borrada. Em seguida ambas foram somada, criando o efeito do <em>tilt-shift</em>.</p>
+<p>Em que <code>centro</code> indica o centro da região em foco, <code>l1</code> e <code>l2</code> os limites dessa região e <code>d</code> o quão suave será a transição entre a imagem focada e a borrada.</p>
+</div>
+<div class="paragraph">
+<p>A matriz resultante desse cálculo é usada para ponderar a imagem sem efeito, e sua inversa \$1-f(x)\$ para ponderar a imagem borrada. Em seguida, ambas são somadas, criando o efeito do <em>tilt-shift</em>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1347,7 +1363,7 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
 
 <span class="tok-kt">float</span> <span class="tok-n">l1</span> <span class="tok-o">=</span> <span class="tok-o">-</span><span class="tok-mi">100</span><span class="tok-p">,</span> <span class="tok-n">l2</span> <span class="tok-o">=</span> <span class="tok-mi">50</span><span class="tok-p">,</span> <span class="tok-n">d</span> <span class="tok-o">=</span> <span class="tok-mi">6</span><span class="tok-p">,</span> <span class="tok-n">centro</span> <span class="tok-o">=</span> <span class="tok-mi">100</span><span class="tok-p">;</span>
 
-<span class="tok-kt">int</span> <span class="tok-n">matriz_media_tam</span> <span class="tok-o">=</span> <span class="tok-mi">5</span><span class="tok-p">;</span>
+<span class="tok-kt">int</span> <span class="tok-n">matriz_media_tam</span> <span class="tok-o">=</span> <span class="tok-mi">7</span><span class="tok-p">;</span>
 <span class="tok-kt">int</span> <span class="tok-n">altura</span><span class="tok-p">,</span> <span class="tok-n">largura</span><span class="tok-p">;</span>
 
 <span class="tok-kt">int</span> <span class="tok-n">slider_altura</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-p">;</span>
@@ -1415,7 +1431,7 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
       <span class="tok-n">fx</span> <span class="tok-o">=</span> <span class="tok-o">-</span><span class="tok-mf">0.5</span> <span class="tok-o">*</span> <span class="tok-p">(</span><span class="tok-n">tanh</span><span class="tok-p">((</span><span class="tok-n">i</span> <span class="tok-o">-</span> <span class="tok-n">centro</span> <span class="tok-o">+</span> <span class="tok-n">l1</span><span class="tok-p">)</span> <span class="tok-o">/</span> <span class="tok-mf">0.01</span><span class="tok-p">)</span> <span class="tok-o">-</span> <span class="tok-n">tanh</span><span class="tok-p">((</span><span class="tok-n">i</span> <span class="tok-o">-</span> <span class="tok-n">centro</span> <span class="tok-o">+</span> <span class="tok-n">l2</span><span class="tok-p">)</span> <span class="tok-o">/</span> <span class="tok-mf">0.01</span><span class="tok-p">));</span>
     <span class="tok-p">}</span>
 
-    <span class="tok-c1">//A ponderação é feita em cada camada RGB</span>
+    <span class="tok-c1">//O tilt shift é aplicado em cada camada da imagem RGB</span>
     <span class="tok-k">for</span> <span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">j</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-p">;</span> <span class="tok-n">j</span> <span class="tok-o">&lt;</span> <span class="tok-n">largura</span><span class="tok-p">;</span> <span class="tok-n">j</span><span class="tok-o">++</span><span class="tok-p">)</span>
     <span class="tok-p">{</span>
       <span class="tok-n">ponderada</span><span class="tok-p">.</span><span class="tok-n">at</span><span class="tok-o">&lt;</span><span class="tok-n">Vec3f</span><span class="tok-o">&gt;</span><span class="tok-p">(</span><span class="tok-n">i</span><span class="tok-p">,</span> <span class="tok-n">j</span><span class="tok-p">)[</span><span class="tok-mi">0</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-n">fx</span><span class="tok-p">;</span>
@@ -1449,7 +1465,7 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
   <span class="tok-p">{</span>
     <span class="tok-k">for</span> <span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">j</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-p">;</span> <span class="tok-n">j</span> <span class="tok-o">&lt;</span> <span class="tok-n">matriz_media_tam</span><span class="tok-p">;</span> <span class="tok-n">j</span><span class="tok-o">++</span><span class="tok-p">)</span>
     <span class="tok-p">{</span>
-      <span class="tok-n">media</span><span class="tok-p">[</span><span class="tok-n">i</span> <span class="tok-o">*</span> <span class="tok-n">matriz_media_tam</span> <span class="tok-o">+</span> <span class="tok-n">j</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-mf">1.0</span> <span class="tok-o">/</span> <span class="tok-mi">25</span><span class="tok-p">;</span>
+      <span class="tok-n">media</span><span class="tok-p">[</span><span class="tok-n">i</span> <span class="tok-o">*</span> <span class="tok-n">matriz_media_tam</span> <span class="tok-o">+</span> <span class="tok-n">j</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-mf">1.0</span> <span class="tok-o">/</span> <span class="tok-p">(</span><span class="tok-n">matriz_media_tam</span> <span class="tok-o">*</span> <span class="tok-n">matriz_media_tam</span><span class="tok-p">);</span>
     <span class="tok-p">}</span>
   <span class="tok-p">}</span>
   <span class="tok-n">Mat</span> <span class="tok-n">masc_media</span><span class="tok-p">(</span><span class="tok-n">matriz_media_tam</span><span class="tok-p">,</span> <span class="tok-n">matriz_media_tam</span><span class="tok-p">,</span> <span class="tok-n">CV_32F</span><span class="tok-p">,</span> <span class="tok-n">media</span><span class="tok-p">);</span>
@@ -1462,9 +1478,9 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
   <span class="tok-c1">//O filtro do borramento é aplicado em cada canal separadamente</span>
   <span class="tok-n">split</span><span class="tok-p">(</span><span class="tok-n">imagem</span><span class="tok-p">,</span> <span class="tok-n">canais</span><span class="tok-p">);</span>
 
-  <span class="tok-n">filter2D</span><span class="tok-p">(</span><span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">0</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">0</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">0</span><span class="tok-p">].</span><span class="tok-n">depth</span><span class="tok-p">(),</span> <span class="tok-n">masc_media</span><span class="tok-p">,</span> <span class="tok-n">Point</span><span class="tok-p">(</span><span class="tok-mi">2</span><span class="tok-p">,</span> <span class="tok-mi">2</span><span class="tok-p">),</span> <span class="tok-mi">0</span><span class="tok-p">);</span>
-  <span class="tok-n">filter2D</span><span class="tok-p">(</span><span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">].</span><span class="tok-n">depth</span><span class="tok-p">(),</span> <span class="tok-n">masc_media</span><span class="tok-p">,</span> <span class="tok-n">Point</span><span class="tok-p">(</span><span class="tok-mi">2</span><span class="tok-p">,</span> <span class="tok-mi">2</span><span class="tok-p">),</span> <span class="tok-mi">0</span><span class="tok-p">);</span>
-  <span class="tok-n">filter2D</span><span class="tok-p">(</span><span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">].</span><span class="tok-n">depth</span><span class="tok-p">(),</span> <span class="tok-n">masc_media</span><span class="tok-p">,</span> <span class="tok-n">Point</span><span class="tok-p">(</span><span class="tok-mi">2</span><span class="tok-p">,</span> <span class="tok-mi">2</span><span class="tok-p">),</span> <span class="tok-mi">0</span><span class="tok-p">);</span>
+  <span class="tok-n">filter2D</span><span class="tok-p">(</span><span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">0</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">0</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">0</span><span class="tok-p">].</span><span class="tok-n">depth</span><span class="tok-p">(),</span> <span class="tok-n">masc_media</span><span class="tok-p">,</span> <span class="tok-n">Point</span><span class="tok-p">(</span><span class="tok-mi">3</span><span class="tok-p">,</span> <span class="tok-mi">3</span><span class="tok-p">),</span> <span class="tok-mi">0</span><span class="tok-p">);</span>
+  <span class="tok-n">filter2D</span><span class="tok-p">(</span><span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">].</span><span class="tok-n">depth</span><span class="tok-p">(),</span> <span class="tok-n">masc_media</span><span class="tok-p">,</span> <span class="tok-n">Point</span><span class="tok-p">(</span><span class="tok-mi">3</span><span class="tok-p">,</span> <span class="tok-mi">3</span><span class="tok-p">),</span> <span class="tok-mi">0</span><span class="tok-p">);</span>
+  <span class="tok-n">filter2D</span><span class="tok-p">(</span><span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">].</span><span class="tok-n">depth</span><span class="tok-p">(),</span> <span class="tok-n">masc_media</span><span class="tok-p">,</span> <span class="tok-n">Point</span><span class="tok-p">(</span><span class="tok-mi">3</span><span class="tok-p">,</span> <span class="tok-mi">3</span><span class="tok-p">),</span> <span class="tok-mi">0</span><span class="tok-p">);</span>
 
   <span class="tok-n">merge</span><span class="tok-p">(</span><span class="tok-n">canais</span><span class="tok-p">,</span> <span class="tok-n">imagem_borrada</span><span class="tok-p">);</span>
 
@@ -1512,7 +1528,7 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
 <div class="sect2">
 <h3 id="_exercicio_tiltshiftvideo">5.2. Exercicio <strong><em>tiltshiftvideo</em></strong></h3>
 <div class="paragraph">
-<p>Ainda usando exemplos/addweighted.cpp como base, foi criado um programa que aplica o efeito de <em>tilt-shift</em> e <em>stop motion</em> em um vídeo colorido. Para isso, além de efetuar os mesmos procedimentos do exercício anteriorpara o <em>tilt-shift</em>, foi colocado um laço que descarta <code>aceleracao</code> frame do video antes de processar um frame, crinado o efeito de <em>stop motion</em>.</p>
+<p>Ainda usando exemplos/addweighted.cpp como base, foi criado um programa que aplica o efeito de <em>tilt-shift</em> e <em>stop motion</em> em um vídeo colorido. Para isso, além de efetuar os mesmos procedimentos do exercício anterior para o <em>tilt-shift</em>, foi colocado um laço que descarta <code>aceleracao</code> frames do video antes de processar um frame, criando o efeito de <em>stop motion</em>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1522,7 +1538,7 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
 <span class="tok-k">using</span> <span class="tok-k">namespace</span> <span class="tok-n">cv</span><span class="tok-p">;</span>
 <span class="tok-k">using</span> <span class="tok-k">namespace</span> <span class="tok-n">std</span><span class="tok-p">;</span>
 
-<span class="tok-kt">int</span> <span class="tok-n">matriz_media_tam</span> <span class="tok-o">=</span> <span class="tok-mi">5</span><span class="tok-p">;</span>
+<span class="tok-kt">int</span> <span class="tok-n">matriz_media_tam</span> <span class="tok-o">=</span> <span class="tok-mi">7</span><span class="tok-p">;</span>
 
 <span class="tok-kt">int</span> <span class="tok-nf">main</span><span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">argvc</span><span class="tok-p">,</span> <span class="tok-kt">char</span> <span class="tok-o">**</span><span class="tok-n">argv</span><span class="tok-p">)</span>
 <span class="tok-p">{</span>
@@ -1543,7 +1559,7 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
   <span class="tok-p">{</span>
     <span class="tok-k">for</span> <span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">j</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-p">;</span> <span class="tok-n">j</span> <span class="tok-o">&lt;</span> <span class="tok-n">matriz_media_tam</span><span class="tok-p">;</span> <span class="tok-n">j</span><span class="tok-o">++</span><span class="tok-p">)</span>
     <span class="tok-p">{</span>
-      <span class="tok-n">media</span><span class="tok-p">[</span><span class="tok-n">i</span> <span class="tok-o">*</span> <span class="tok-n">matriz_media_tam</span> <span class="tok-o">+</span> <span class="tok-n">j</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-mf">1.0</span> <span class="tok-o">/</span> <span class="tok-mf">25.0</span><span class="tok-p">;</span>
+      <span class="tok-n">media</span><span class="tok-p">[</span><span class="tok-n">i</span> <span class="tok-o">*</span> <span class="tok-n">matriz_media_tam</span> <span class="tok-o">+</span> <span class="tok-n">j</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-mf">1.0</span> <span class="tok-o">/</span> <span class="tok-p">(</span><span class="tok-n">matriz_media_tam</span> <span class="tok-o">*</span> <span class="tok-n">matriz_media_tam</span><span class="tok-p">);</span>
     <span class="tok-p">}</span>
   <span class="tok-p">}</span>
 
@@ -1553,7 +1569,9 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
   <span class="tok-n">Mat</span> <span class="tok-n">ponderada</span><span class="tok-p">(</span><span class="tok-n">altura</span><span class="tok-p">,</span> <span class="tok-n">largura</span><span class="tok-p">,</span> <span class="tok-n">CV_32FC3</span><span class="tok-p">);</span>
   <span class="tok-n">Mat</span> <span class="tok-n">ponderada_negativa</span><span class="tok-p">(</span><span class="tok-n">altura</span><span class="tok-p">,</span> <span class="tok-n">largura</span><span class="tok-p">,</span> <span class="tok-n">CV_32FC3</span><span class="tok-p">);</span>
 
-  <span class="tok-kt">int</span> <span class="tok-n">centro</span> <span class="tok-o">=</span> <span class="tok-n">altura</span> <span class="tok-o">/</span> <span class="tok-mi">2</span><span class="tok-p">,</span> <span class="tok-n">l1</span> <span class="tok-o">=</span> <span class="tok-o">-</span><span class="tok-mi">50</span><span class="tok-p">,</span> <span class="tok-n">l2</span> <span class="tok-o">=</span> <span class="tok-mi">50</span><span class="tok-p">,</span> <span class="tok-n">d</span> <span class="tok-o">=</span> <span class="tok-mi">10</span><span class="tok-p">,</span> <span class="tok-n">aceleracao</span> <span class="tok-o">=</span> <span class="tok-mi">8</span><span class="tok-p">;</span>
+  <span class="tok-kt">int</span> <span class="tok-n">centro</span> <span class="tok-o">=</span> <span class="tok-mi">6</span><span class="tok-o">*</span><span class="tok-n">altura</span> <span class="tok-o">/</span> <span class="tok-mi">10</span><span class="tok-p">,</span> <span class="tok-n">l1</span> <span class="tok-o">=</span> <span class="tok-o">-</span><span class="tok-mi">70</span><span class="tok-p">,</span> <span class="tok-n">l2</span> <span class="tok-o">=</span> <span class="tok-mi">70</span><span class="tok-p">,</span> <span class="tok-n">aceleracao</span> <span class="tok-o">=</span> <span class="tok-mi">10</span><span class="tok-p">;</span>
+  <span class="tok-kt">float</span> <span class="tok-n">d</span> <span class="tok-o">=</span> <span class="tok-mi">30</span><span class="tok-p">;</span>
+
   <span class="tok-n">cout</span> <span class="tok-o">&lt;&lt;</span> <span class="tok-s">&quot;centro: &quot;</span> <span class="tok-o">&lt;&lt;</span> <span class="tok-n">centro</span> <span class="tok-o">&lt;&lt;</span>
           <span class="tok-s">&quot;, l1: &quot;</span> <span class="tok-o">&lt;&lt;</span> <span class="tok-n">l1</span> <span class="tok-o">&lt;&lt;</span>
           <span class="tok-s">&quot;, l2: &quot;</span> <span class="tok-o">&lt;&lt;</span> <span class="tok-n">l2</span> <span class="tok-o">&lt;&lt;</span>
@@ -1598,9 +1616,9 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
     <span class="tok-n">vector</span><span class="tok-o">&lt;</span><span class="tok-n">Mat</span><span class="tok-o">&gt;</span> <span class="tok-n">canais</span><span class="tok-p">;</span>
     <span class="tok-n">split</span><span class="tok-p">(</span><span class="tok-n">imagem</span><span class="tok-p">,</span> <span class="tok-n">canais</span><span class="tok-p">);</span>
 
-    <span class="tok-n">filter2D</span><span class="tok-p">(</span><span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">0</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">0</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">0</span><span class="tok-p">].</span><span class="tok-n">depth</span><span class="tok-p">(),</span> <span class="tok-n">masc_media</span><span class="tok-p">,</span> <span class="tok-n">Point</span><span class="tok-p">(</span><span class="tok-mi">2</span><span class="tok-p">,</span> <span class="tok-mi">2</span><span class="tok-p">),</span> <span class="tok-mi">0</span><span class="tok-p">);</span>
-    <span class="tok-n">filter2D</span><span class="tok-p">(</span><span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">].</span><span class="tok-n">depth</span><span class="tok-p">(),</span> <span class="tok-n">masc_media</span><span class="tok-p">,</span> <span class="tok-n">Point</span><span class="tok-p">(</span><span class="tok-mi">2</span><span class="tok-p">,</span> <span class="tok-mi">2</span><span class="tok-p">),</span> <span class="tok-mi">0</span><span class="tok-p">);</span>
-    <span class="tok-n">filter2D</span><span class="tok-p">(</span><span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">].</span><span class="tok-n">depth</span><span class="tok-p">(),</span> <span class="tok-n">masc_media</span><span class="tok-p">,</span> <span class="tok-n">Point</span><span class="tok-p">(</span><span class="tok-mi">2</span><span class="tok-p">,</span> <span class="tok-mi">2</span><span class="tok-p">),</span> <span class="tok-mi">0</span><span class="tok-p">);</span>
+    <span class="tok-n">filter2D</span><span class="tok-p">(</span><span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">0</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">0</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">0</span><span class="tok-p">].</span><span class="tok-n">depth</span><span class="tok-p">(),</span> <span class="tok-n">masc_media</span><span class="tok-p">,</span> <span class="tok-n">Point</span><span class="tok-p">(</span><span class="tok-mi">3</span><span class="tok-p">,</span> <span class="tok-mi">3</span><span class="tok-p">),</span> <span class="tok-mi">0</span><span class="tok-p">);</span>
+    <span class="tok-n">filter2D</span><span class="tok-p">(</span><span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">].</span><span class="tok-n">depth</span><span class="tok-p">(),</span> <span class="tok-n">masc_media</span><span class="tok-p">,</span> <span class="tok-n">Point</span><span class="tok-p">(</span><span class="tok-mi">3</span><span class="tok-p">,</span> <span class="tok-mi">3</span><span class="tok-p">),</span> <span class="tok-mi">0</span><span class="tok-p">);</span>
+    <span class="tok-n">filter2D</span><span class="tok-p">(</span><span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">],</span> <span class="tok-n">canais</span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">].</span><span class="tok-n">depth</span><span class="tok-p">(),</span> <span class="tok-n">masc_media</span><span class="tok-p">,</span> <span class="tok-n">Point</span><span class="tok-p">(</span><span class="tok-mi">3</span><span class="tok-p">,</span> <span class="tok-mi">3</span><span class="tok-p">),</span> <span class="tok-mi">0</span><span class="tok-p">);</span>
 
     <span class="tok-n">merge</span><span class="tok-p">(</span><span class="tok-n">canais</span><span class="tok-p">,</span> <span class="tok-n">imagem_borrada</span><span class="tok-p">);</span>
 
@@ -1616,7 +1634,10 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
     <span class="tok-n">resultado</span><span class="tok-p">.</span><span class="tok-n">convertTo</span><span class="tok-p">(</span><span class="tok-n">resultado</span><span class="tok-p">,</span> <span class="tok-n">CV_8UC3</span><span class="tok-p">);</span>
 
     <span class="tok-n">imshow</span><span class="tok-p">(</span><span class="tok-s">&quot;tiltshift&quot;</span><span class="tok-p">,</span> <span class="tok-n">resultado</span><span class="tok-p">);</span>
-    <span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">waitKey</span><span class="tok-p">(</span><span class="tok-mi">30</span><span class="tok-p">)</span> <span class="tok-o">==</span> <span class="tok-mi">27</span><span class="tok-p">)</span>
+
+    <span class="tok-c1">//Tempo para mostrar cada quadro foi aumentado para melhorar a</span>
+    <span class="tok-c1">//visualização do stop motion</span>
+    <span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">waitKey</span><span class="tok-p">(</span><span class="tok-mi">50</span><span class="tok-p">)</span> <span class="tok-o">==</span> <span class="tok-mi">27</span><span class="tok-p">)</span>
       <span class="tok-k">break</span><span class="tok-p">;</span>
   <span class="tok-p">}</span>
 
@@ -1636,7 +1657,7 @@ $ ./&lt;nome_arquivo&gt; &lt;nome_da_imagem_ou_video&gt;</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-09-11 23:59:35 -03
+Last updated 2018-09-12 22:38:52 -03
 </div>
 </div>
 <script type="text/x-mathjax-config">
